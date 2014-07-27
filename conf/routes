@@ -1,0 +1,180 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                                       				Application.index
+
+# Add food venues in database
+GET		/adminAdd												Application.adminAdd
+
+# Add nightlife spots venues in database
+GET		/adminNS												Application.adminNS
+
+# Add residence venues in database
+GET		/adminR 												Application.adminR
+
+# Add arts and entertainment venues in database
+GET		/adminAE 												Application.adminAE
+
+# Add colleges and universities venues in database
+GET		/adminCU												Application.adminCU
+
+# Add outdoor and recreation in database
+GET		/adminOR												Application.adminOR	
+
+# Add shop and service venues in database
+GET		/adminSS												Application.adminSS	
+
+# Add travel and transport venues in database
+GET		/adminTT												Application.adminTT
+
+# Show map
+GET		/map								    				Application.map
+
+# Show top venues
+GET		/topvenues  							    			Application.topvenues
+
+#test filter
+GET		/test  							    					Application.test
+
+
+# ---------------------------------REST API-----------------------------------------
+	#foodvenue API
+	GET		/services/api/foodvenue													Services.foodvenueGet
+	GET		/services/api/foodvenue/{id}											Services.foodvenueGet(id)
+	POST	/services/api/foodvenue/create											Services.foodvenueCreate
+	POST	/services/api/foodvenue/delete											Services.foodvenueDelete
+	POST	/services/api/foodvenue/update											Services.foodvenueUpdate
+
+	#foodcheckin API
+	GET		/services/api/foodcheckin												Services.foodcheckinGet
+	GET		/services/api/foodcheckin/{id}											Services.foodcheckinGet(id)
+	GET		/services/api/foodcheckinvenue/{venueID}	        					Services.foodcheckinGetvenue(venueID)
+	GET		/services/api/foodcheckintime/{dayf}/{monthf}/{dayt}/{montht}   		Services.foodcheckinGettime(dayf,monthf,dayt,montht)	
+	POST	/services/api/foodcheckin/create										Services.foodcheckinCreate
+	POST	/services/api/foodcheckin/delete										Services.foodcheckinDelete
+	POST	/services/api/foodcheckin/update										Services.foodcheckinUpdate
+	
+	#nightlifespotvenue API
+	GET		/services/api/nightlifespotvenue										ServicesNS.nightlifespotvenueGet
+	GET		/services/api/nightlifespotvenue/{id}									ServicesNS.nightlifespotvenueGet(id)
+	POST	/services/api/nightlifespotvenue/create									ServicesNS.nightlifespotvenueCreate
+	POST	/services/api/nightlifespotvenue/delete									ServicesNS.nightlifespotvenueDelete
+	POST	/services/api/nightlifespotvenue/update									ServicesNS.nightlifespotvenueUpdate
+
+	#nightlifespotcheckin API
+	GET		/services/api/nightlifespotcheckin										ServicesNS.nightlifespotcheckinGet
+	GET		/services/api/nightlifespotcheckin/{id}									ServicesNS.nightlifespotcheckinGet(id)
+	GET		/services/api/nightlifespotcheckinvenue/{venueID}						ServicesNS.nightlifespotcheckinGetvenue(venueID)
+	GET		/services/api/nightlifespotcheckintime/{dayf}/{monthf}/{dayt}/{montht}  ServicesNS.nightlifespotcheckinGettime(dayf,monthf,dayt,montht)	
+	POST	/services/api/nightlifespotcheckin/create								ServicesNS.nightlifespotcheckinCreate
+	POST	/services/api/nightlifespotcheckin/delete								ServicesNS.nightlifespotcheckinDelete
+	POST	/services/api/nightlifespotcheckin/update								ServicesNS.nightlifespotcheckinUpdate
+	
+	#residencevenue API
+	GET		/services/api/residencevenue											ServicesR.residencevenueGet
+	GET		/services/api/residencevenue/{id}										ServicesR.residencevenueGet(id)
+	POST	/services/api/residencevenue/create										ServicesR.residencevenueCreate
+	POST	/services/api/residencevenue/delete										ServicesR.residencevenueDelete
+	POST	/services/api/residencevenue/update										ServicesR.residencevenueUpdate
+
+	#residencecheckin API
+	GET		/services/api/residencecheckin											ServicesR.residencecheckinGet
+	GET		/services/api/residencecheckin/{id}										ServicesR.residencecheckinGet(id)
+	GET		/services/api/residencecheckinvenue/{venueID}  							ServicesR.residencecheckinGetvenue(venueID)
+	GET		/services/api/residencecheckintime/{dayf}/{monthf}/{dayt}/{montht}   	ServicesR.residencecheckinGettime(dayf,monthf,dayt,montht)	
+	POST	/services/api/residencecheckin/create									ServicesR.residencecheckinCreate
+	POST	/services/api/residencecheckin/delete									ServicesR.residencecheckinDelete
+	POST	/services/api/residencecheckin/update									ServicesR.residencecheckinUpdate
+	
+	#artsentertainmentvenue API
+	GET		/services/api/artsentertainmentvenue									ServicesAE.artsentertainmentvenueGet
+	GET		/services/api/artsentertainmentvenue/{id}								ServicesAE.artsentertainmentvenueGet(id)
+	POST	/services/api/artsentertainmentvenue/create								ServicesAE.artsentertainmentvenueCreate
+	POST	/services/api/artsentertainmentvenue/delete								ServicesAE.artsentertainmentvenueDelete
+	POST	/services/api/artsentertainmentvenue/update								ServicesAE.artsentertainmentvenueUpdate
+
+	#artsentertainmentcheckin API
+	GET		/services/api/artsentertainmentcheckin									ServicesAE.artsentertainmentcheckinGet
+	GET		/services/api/artsentertainmentcheckin/{id}								ServicesAE.artsentertainmentcheckinGet(id)
+	GET		/services/api/artsentertainmentcheckinvenue/{venueID}  					ServicesAE.artsentertainmentcheckinGetvenue(venueID)
+	GET		/services/api/artsentertainmentcheckintime/{dayf}/{monthf}/{dayt}/{montht}  ServicesAE.artsentertainmentcheckinGettime(dayf,monthf,dayt,montht)
+	POST	/services/api/artsentertainmentcheckin/create							ServicesAE.artsentertainmentcheckinCreate
+	POST	/services/api/artsentertainmentcheckin/delete							ServicesAE.artsentertainmentcheckinDelete
+	POST	/services/api/artsentertainmentcheckin/update							ServicesAE.artsentertainmentcheckinUpdate
+	
+	#collegeuniversityvenue API
+	GET		/services/api/collegeuniversityvenue									ServicesCU.collegeuniversityvenueGet
+	GET		/services/api/collegeuniversityvenue/{id}								ServicesCU.collegeuniversityvenueGet(id)
+	POST	/services/api/collegeuniversityvenue/create								ServicesCU.collegeuniversityvenueCreate
+	POST	/services/api/collegeuniversityvenue/delete								ServicesCU.collegeuniversityvenueDelete
+	POST	/services/api/collegeuniversityvenue/update								ServicesCU.collegeuniversityvenueUpdate
+
+	#collegeuniversitycheckin API
+	GET		/services/api/collegeuniversitycheckin									ServicesCU.collegeuniversitycheckinGet
+	GET		/services/api/collegeuniversitycheckin/{id}								ServicesCU.collegeuniversitycheckinGet(id)
+	GET		/services/api/collegeuniversitycheckinvenue/{venueID}					ServicesCU.collegeuniversitycheckinGetvenue(venueID)
+	GET		/services/api/collegeuniversitycheckintime/{dayf}/{monthf}/{dayt}/{montht}   ServicesCU.collegeuniversitycheckinGettime(dayf,monthf,dayt,montht)	
+	POST	/services/api/collegeuniversitycheckin/create							ServicesCU.collegeuniversitycheckinCreate
+	POST	/services/api/collegeuniversitycheckin/delete							ServicesCU.collegeuniversitycheckinDelete
+	POST	/services/api/collegeuniversitycheckin/update							ServicesCU.collegeuniversitycheckinUpdate
+	
+	#outdoorsrecreationvenue API
+	GET		/services/api/outdoorsrecreationvenue									ServicesOR.outdoorsrecreationvenueGet
+	GET		/services/api/outdoorsrecreationvenue/{id}								ServicesOR.outdoorsrecreationvenueGet(id)
+	POST	/services/api/outdoorsrecreationvenue/create							ServicesOR.outdoorsrecreationvenueCreate
+	POST	/services/api/outdoorsrecreationvenue/delete							ServicesOR.outdoorsrecreationvenueDelete
+	POST	/services/api/outdoorsrecreationvenue/update							ServicesOR.outdoorsrecreationvenueUpdate
+
+	#outdoorsrecreationcheckin API
+	GET		/services/api/outdoorsrecreationcheckin									ServicesOR.outdoorsrecreationcheckinGet
+	GET		/services/api/outdoorsrecreationcheckin/{id}							ServicesOR.outdoorsrecreationcheckinGet(id)
+	GET		/services/api/outdoorsrecreationcheckinvenue/{venueID} 					ServicesOR.outdoorsrecreationcheckinGetvenue(venueID)
+	GET		/services/api/outdoorsrecreationcheckintime/{dayf}/{monthf}/{dayt}/{montht}   ServicesOR.outdoorsrecreationcheckinGettime(dayf,monthf,dayt,montht)	
+	POST	/services/api/outdoorsrecreationcheckin/create							ServicesOR.outdoorsrecreationcheckinCreate
+	POST	/services/api/outdoorsrecreationcheckin/delete							ServicesOR.outdoorsrecreationcheckinDelete
+	POST	/services/api/outdoorsrecreationcheckin/update							ServicesOR.outdoorsrecreationcheckinUpdate
+	
+	#shopservicevenue API
+	GET		/services/api/shopservicevenue											ServicesSS.shopservicevenueGet
+	GET		/services/api/shopservicevenue/{id}										ServicesSS.shopservicevenueGet(id)
+	POST	/services/api/shopservicevenue/create									ServicesSS.shopservicevenueCreate
+	POST	/services/api/shopservicevenue/delete									ServicesSS.shopservicevenueDelete
+	POST	/services/api/shopservicevenue/update									ServicesSS.shopservicevenueUpdate
+
+	#shopservicecheckin API
+	GET		/services/api/shopservicecheckin										ServicesSS.shopservicecheckinGet
+	GET		/services/api/shopservicecheckin/{id}									ServicesSS.shopservicecheckinGet(id)
+	GET		/services/api/shopservicecheckinvenue/{venueID} 						ServicesSS.shopservicecheckinGetvenue(venueID)
+	GET		/services/api/shopservicecheckintime/{dayf}/{monthf}/{dayt}/{montht}   ServicesSS.shopservicecheckinGettime(dayf,monthf,dayt,montht)	
+	POST	/services/api/shopservicecheckin/create									ServicesSS.shopservicecheckinCreate
+	POST	/services/api/shopservicecheckin/delete									ServicesSS.shopservicecheckinDelete
+	POST	/services/api/shopservicecheckin/update									ServicesSS.shopservicecheckinUpdate
+	
+	#traveltransportvenue API
+	GET		/services/api/traveltransportvenue										ServicesTT.traveltransportvenueGet
+	GET		/services/api/traveltransportvenue/{id}									ServicesTT.traveltransportvenueGet(id)
+	POST	/services/api/traveltransportvenue/create								ServicesTT.traveltransportvenueCreate
+	POST	/services/api/traveltransportvenue/delete								ServicesTT.traveltransportvenueDelete
+	POST	/services/api/traveltransportvenue/update								ServicesTT.traveltransportvenueUpdate
+
+	#traveltransportcheckin API
+	GET		/services/api/traveltransportcheckin									ServicesTT.traveltransportcheckinGet
+	GET		/services/api/traveltransportcheckin/{id}								ServicesTT.traveltransportcheckinGet(id)
+	GET		/services/api/traveltransportcheckinvenue/{venueID} 					ServicesTT.traveltransportcheckinGetvenue(venueID)
+	GET		/services/api/traveltransportcheckintime/{dayf}/{monthf}/{dayt}/{montht}   ServicesTT.traveltransportcheckinGettime(dayf,monthf,dayt,montht)	
+	POST	/services/api/traveltransportcheckin/create								ServicesTT.traveltransportcheckinCreate
+	POST	/services/api/traveltransportcheckin/delete								ServicesTT.traveltransportcheckinDelete
+	POST	/services/api/traveltransportcheckin/update								ServicesTT.traveltransportcheckinUpdate
+
+# ---------------------------------REST API-----------------------------------------
+
+# Ignore favicon requests
+GET     /favicon.ico                            				404
+
+# Map static resources from the /app/public folder to the /public path
+GET     /public/                                				staticDir:public
+
+# Import CRUD routes
+*     /admin           											module:crud

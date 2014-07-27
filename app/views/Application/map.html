@@ -1,0 +1,79 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+  
+<head>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<title>GMaps Heatmap</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" media="screen" href="@{'/public/stylesheets/map.css'}">
+		
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyAb9bwua-Oq7Gn0hlNkwLn4RiZZmwfWTQw"></script>
+<script type="text/javascript" src="/public/javascripts/heatmap.js"></script>
+<script type="text/javascript" src="/public/javascripts/heatmap-gmaps.js"></script>
+<script type="text/javascript" src="/public/javascripts/map.js"></script>
+<script type="text/javascript" src="/public/javascripts/FileSaver.js"></script>
+
+</head>
+<body>
+<div id="main">
+	<div id="heatmapArea"></div>
+	<div id="configArea">
+		<input id="login" type="submit" class="btn btn-default" value="">
+		<br><br>
+		<strong>Categories</strong>
+		<div id="categories">
+			<label class="residence">
+				<input type="checkbox" id="residence" value="residence"/>
+			</label>&nbsp;Residence<br>
+			<label class="food">
+				<input type="checkbox" id="food" value="food"/>
+			</label>&nbsp;Food<br>
+			<label class="artsentertainment">
+				<input type="checkbox" id="artsentertainment" value="artsentertainment"/>
+			</label>&nbsp;Arts & Entertainment<br>
+			<label class="collegeuniversity">
+				<input type="checkbox" id="collegeuniversity" value="collegeuniversity"/>
+			</label>&nbsp;College & University<br>
+			<label class="nightlifespot">
+				<input type="checkbox" id="nightlifespot" value="nightlifespot"/>
+			</label>&nbsp;Nightlife spot<br>
+			<label class="outdoorsrecreation">
+				<input type="checkbox" id="outdoorsrecreation" value="outdoorsrecreation"/>
+			</label>&nbsp;Outdoors & Recreation<br>
+			<label class="shopservice">
+				<input type="checkbox" id="shopservice" value="shopservice"/>
+			</label>&nbsp;Shop & Service<br>
+			<label class="traveltransport">
+				<input type="checkbox" id="traveltransport" value="traveltransport"/>
+			</label>&nbsp;Travel & Transport<br><br>
+		</div>
+		<strong> Date from:<strong> <input type="datetime-local" id="datetimefrom" />
+			<!-- <br><br> -->
+		<strong>Date to:<strong> <input type="datetime-local" id="datetimeto" />
+			<br><br>
+		<strong>Day: </strong> <input type="text" id="dayofweek" list="days" />
+			<datalist id="days">
+			  <option value="Monday">
+			  <option value="Tuesday">
+			  <option value="Wednesday">
+			  <option value="Thursday">
+			  <option value="Friday">
+			  <option value="Saturday">
+			  <option value="Sunday">
+			</datalist>
+		<input type="button"  id="submitCategories" class="btn btn-default" value="View heat map"></input>
+		<input type="button"  id="submitCircles" class="btn btn-default" value="View circles" disabled></input>
+		<br><br>
+		<a href="topvenues" target="_blank" class="btn btn-default">Show top Venues</a>
+		<br><br>
+		<form id="html-options">
+            <label>Filename: <input type="text" class="filename form-control" id="html-filename" placeholder="total"/></label>
+            <br><br>
+  			<input id="saveFile" style="margin-top: -3px;" type="submit" class="btn btn-default" value="Download data as .csv" disabled></input>
+        </form>
+        <p hidden>Zoom level: <span id="currentZoom"></span></p>
+		<p hidden>Center: <span id="currentCenter"></span></p>
+	</div>
+</div>
+</body>
